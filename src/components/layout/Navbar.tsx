@@ -24,9 +24,15 @@ export default function Navbar() {
   const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
-      const element = document.querySelector(href);
+      const targetId = href.replace('#', '');
+      const element = document.getElementById(targetId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const navHeight = 70;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - navHeight,
+          behavior: 'smooth',
+        });
         setMobileMenuOpen(false);
       }
     }

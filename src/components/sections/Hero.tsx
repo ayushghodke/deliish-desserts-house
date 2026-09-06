@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, ArrowRight, Sparkles } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { CAFE_INFO } from '@/lib/constants';
 
 export default function Hero() {
@@ -27,6 +26,19 @@ export default function Hero() {
         ease: 'easeOut' as const,
       },
     },
+  };
+
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const navHeight = 70;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
@@ -103,22 +115,24 @@ export default function Hero() {
           Founded by <span className="text-[var(--gold)] font-semibold">Prratik</span>, an independent dessert artisan who discovered his own secret recipes. Experience 50+ unique handcrafted thick shakes, brownie blasts, and mithai fusions across 6 cozy tables.
         </motion.p>
 
-        {/* Action Buttons - responsive stack on mobile */}
+        {/* Action Buttons - smooth scrolling */}
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12 w-full max-w-xs sm:max-w-none px-2">
-          <Link
+          <a
             href="#menu"
-            className="group flex items-center justify-center gap-2 bg-[var(--gold)] text-[var(--maroon)] px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-[#E5C065] transition-all duration-300 shadow-[0_0_20px_rgba(212,168,67,0.35)] hover:scale-105 text-center"
+            onClick={(e) => handleScrollToSection(e, 'menu')}
+            className="group flex items-center justify-center gap-2 bg-[var(--gold)] text-[var(--maroon)] px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-[#E5C065] transition-all duration-300 shadow-[0_0_20px_rgba(212,168,67,0.35)] hover:scale-105 text-center cursor-pointer"
           >
             <span>Explore Menu</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
 
-          <Link
+          <a
             href="#reserve"
-            className="border-2 border-[var(--gold)] text-[var(--gold)] px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-[var(--gold)]/10 transition-all duration-300 hover:scale-105 text-center"
+            onClick={(e) => handleScrollToSection(e, 'reserve')}
+            className="border-2 border-[var(--gold)] text-[var(--gold)] px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-[var(--gold)]/10 transition-all duration-300 hover:scale-105 text-center cursor-pointer"
           >
             Book Table (6 Tables)
-          </Link>
+          </a>
 
           <a
             href={CAFE_INFO.instagramUrl}
@@ -151,15 +165,17 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
+      {/* Scroll indicator with smooth click */}
+      <motion.a
+        href="#about"
+        onClick={(e) => handleScrollToSection(e, 'about')}
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[var(--gold)] opacity-75 flex flex-col items-center pointer-events-none"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[var(--gold)] opacity-75 flex flex-col items-center cursor-pointer hover:opacity-100 transition-opacity"
       >
         <span className="text-[10px] uppercase tracking-widest mb-1">Scroll Down</span>
         <ChevronDown size={20} />
-      </motion.div>
+      </motion.a>
     </section>
   );
 }
