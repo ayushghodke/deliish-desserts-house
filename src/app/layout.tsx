@@ -3,6 +3,7 @@ import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import WhatsAppWidget from "@/components/ui/WhatsAppWidget";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppWidget />
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import clsx from 'clsx';
 import { NAV_LINKS, CAFE_INFO } from '@/lib/constants';
 
@@ -83,7 +83,17 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action CTAs */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href={`https://wa.me/${CAFE_INFO.phone.replace(/\D/g, '')}?text=Hi%20Prratik%2C%20I%20would%20like%20to%20know%20more%20about%20Deliish%20Desserts%20House`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs text-[#25D366] border border-[#25D366]/40 rounded-full px-3.5 py-2 hover:bg-[#25D366]/15 transition-all cursor-pointer shadow-sm"
+              title="Chat on WhatsApp"
+            >
+              <MessageCircle size={14} />
+              <span>WhatsApp</span>
+            </a>
             <a
               href={`tel:${CAFE_INFO.phone}`}
               className="flex items-center gap-2 text-xs text-[var(--gold)] border border-[var(--gold)]/30 rounded-full px-4 py-2 hover:bg-[var(--gold)]/10 transition-colors"
@@ -165,6 +175,15 @@ export default function Navbar() {
               </div>
 
               <div className="mt-auto pt-8 border-t border-[var(--gold)]/20 flex flex-col gap-3">
+                <a
+                  href={`https://wa.me/${CAFE_INFO.phone.replace(/\D/g, '')}?text=Hi%20Prratik%2C%20I%20would%20like%20to%20know%20more%20about%20Deliish%20Desserts%20House`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1faa53] text-white rounded-full py-3 text-sm font-semibold shadow-md transition-colors"
+                >
+                  <MessageCircle size={16} />
+                  Chat on WhatsApp
+                </a>
                 <a
                   href={`tel:${CAFE_INFO.phone}`}
                   className="flex items-center justify-center gap-2 border border-[var(--gold)]/50 text-[var(--gold)] rounded-full py-3 text-sm font-semibold"
