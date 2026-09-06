@@ -3,25 +3,24 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Sparkles, FileText, CheckCircle2 } from 'lucide-react';
+import { Star, Sparkles, CheckCircle2 } from 'lucide-react';
 import clsx from 'clsx';
 import { MENU_CATEGORIES, MENU_ITEMS, MenuCategory, MenuItem } from '@/lib/constants';
 
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState<string>('all-desserts');
-  const [showMenuCardModal, setShowMenuCardModal] = useState<boolean>(false);
 
   const filteredItems = activeCategory === 'all-desserts'
     ? MENU_ITEMS
     : MENU_ITEMS.filter((item: MenuItem) => item.category === activeCategory);
 
   return (
-    <section id="menu" className="py-24 px-4 bg-[#2F0202] w-full max-w-full overflow-hidden">
+    <section id="menu" className="py-24 px-4 bg-[#2A0202] w-full max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-[var(--gold)]/30 bg-[#4A0404]/50 mb-3">
-            <Sparkles size={14} className="text-[var(--gold)]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/30 bg-[#3D0303]/60 mb-3">
+            <Sparkles size={13} className="text-[var(--gold)]" />
             <span className="text-[var(--gold)] text-xs tracking-widest uppercase font-bold">
               Original Secret Recipes
             </span>
@@ -29,42 +28,32 @@ export default function Menu() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-[var(--cream)] mb-4">
             Handcrafted Menu
           </h2>
-          <p className="max-w-2xl mx-auto text-[var(--cream)]/80 text-sm md:text-base">
-            From ₹59 classics to ultra-luxury Ferrero Rocher crowns and Middle-Eastern Kunafa shakes. Real ingredients, thick cream, and unique tastes.
+          <p className="max-w-2xl mx-auto text-[var(--cream)]/80 text-sm md:text-base leading-relaxed">
+            From ₹59 refreshing classics to ultra-luxury Ferrero Rocher crowns and Middle-Eastern Kunafa shakes. Handcrafted with real ingredients and unique tastes.
           </p>
-
-          {/* View Physical Menu Card Button */}
-          <div className="mt-5">
-            <button
-              onClick={() => setShowMenuCardModal(true)}
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--maroon)] px-5 py-2.5 rounded-full transition-all duration-300 shadow-md"
-            >
-              <FileText size={15} />
-              <span>View Physical Menu Card</span>
-            </button>
-          </div>
         </div>
 
-        {/* Category Filter Bar */}
-        <div className="flex overflow-x-auto pb-4 mb-10 justify-start lg:justify-center gap-2.5 no-scrollbar w-full max-w-full">
-          {MENU_CATEGORIES.map((category: MenuCategory) => {
-            const isActive = activeCategory === category.id;
-            return (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={clsx(
-                  'flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 uppercase tracking-wider',
-                  isActive
-                    ? 'bg-[var(--gold)] text-[var(--maroon)] shadow-[0_0_15px_rgba(212,168,67,0.4)] scale-105'
-                    : 'border border-[var(--gold)]/30 text-[var(--cream)] hover:border-[var(--gold)]/70 hover:bg-white/5'
-                )}
-              >
-                <span>{category.icon}</span>
-                <span>{category.name}</span>
-              </button>
-            );
-          })}
+        {/* Category Filter Navigation */}
+        <div className="w-full max-w-full overflow-x-auto no-scrollbar py-2 mb-12">
+          <div className="flex items-center gap-2.5 px-4 min-w-max mx-auto justify-start lg:justify-center">
+            {MENU_CATEGORIES.map((category: MenuCategory) => {
+              const isActive = activeCategory === category.id;
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={clsx(
+                    'px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 select-none cursor-pointer',
+                    isActive
+                      ? 'bg-gradient-to-r from-[var(--gold)] via-[#E8C468] to-[var(--gold)] text-[#2A0202] font-bold shadow-[0_0_20px_rgba(212,168,67,0.35)] scale-105'
+                      : 'bg-[#3D0303]/70 text-[var(--cream)]/80 hover:text-[var(--gold)] hover:bg-[#4E0505] border border-[var(--gold)]/20'
+                  )}
+                >
+                  {category.name}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Menu Grid */}
@@ -78,7 +67,7 @@ export default function Menu() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 key={item.id}
-                className="bg-[#3D0303]/70 backdrop-blur-sm border border-[var(--gold)]/20 rounded-3xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.5),_0_0_20px_rgba(212,168,67,0.3)] hover:border-[var(--gold)]/60 transition-all duration-300 group flex flex-col"
+                className="bg-[#350202]/80 backdrop-blur-sm border border-[var(--gold)]/20 rounded-3xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.5),_0_0_20px_rgba(212,168,67,0.25)] hover:border-[var(--gold)]/60 transition-all duration-300 group flex flex-col"
               >
                 {/* Product Image Area with Consistent Studio Photography */}
                 <div className="relative aspect-[4/3] bg-[#220101] overflow-hidden">
@@ -91,7 +80,7 @@ export default function Menu() {
                   />
 
                   {/* Gradient bottom overlay on image */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#3D0303] via-transparent to-black/30 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#350202] via-transparent to-black/30 pointer-events-none" />
 
                   {/* Badges */}
                   <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5 z-10">
@@ -160,38 +149,6 @@ export default function Menu() {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* Modal for Physical Menu Card */}
-        <AnimatePresence>
-          {showMenuCardModal && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="relative max-w-4xl w-full max-h-[90vh] bg-[#2A0202] border-2 border-[var(--gold)] rounded-3xl p-4 overflow-auto shadow-2xl"
-              >
-                <div className="flex items-center justify-between pb-3 mb-3 border-b border-[var(--gold)]/30">
-                  <h3 className="font-heading text-lg text-[var(--gold)]">Official Printed Menu Card</h3>
-                  <button
-                    onClick={() => setShowMenuCardModal(false)}
-                    className="text-[var(--gold)] text-sm px-3 py-1 border border-[var(--gold)]/40 rounded-full hover:bg-[var(--gold)] hover:text-[var(--maroon)] transition-colors"
-                  >
-                    Close ✕
-                  </button>
-                </div>
-                <div className="relative w-full h-[70vh] rounded-xl overflow-hidden bg-black">
-                  <Image
-                    src="/images/branding/menu-card.jpg"
-                    alt="Official Deliish Desserts House Menu Card"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );

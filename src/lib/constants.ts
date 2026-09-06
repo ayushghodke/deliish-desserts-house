@@ -93,14 +93,14 @@ export const CAFE_INFO: CafeInfo = {
 };
 
 export const MENU_CATEGORIES: MenuCategory[] = [
-  { id: 'all-desserts', name: 'All Treats', icon: '🍰', description: 'Explore our complete dessert & thick shake collection' },
-  { id: 'signature-premium', name: 'Signature Premium', icon: '👑', description: 'Pistachio Kunafa, Lotus Biscoff, Tiramisu & exclusive luxury shakes' },
-  { id: 'nutella-ferrero', name: 'Nutella & Ferrero', icon: '🌰', description: 'Original Nutella & Rich Ferrero Rocher thick shake masterpieces' },
-  { id: 'brownie-shakes', name: 'Brownie Shakes', icon: '🍫', description: 'Freshly baked fudge brownies blended into rich thick shakes' },
-  { id: 'mithai-fusion', name: 'Mithai Fusion', icon: '✨', description: 'Traditional Indian sweets meet modern gourmet indulgence' },
-  { id: 'fruit-shakes', name: 'Fresh Fruit', icon: '🥭', description: 'Alphonso Mango, Strawberry Blast, Sitafal & berry thick shakes' },
-  { id: 'chocolate-shakes', name: 'Chocolate Shakes', icon: '🍫', description: 'Cadbury Silk, Belgian Chocolate, Snickers & dark chocolate delight' },
-  { id: 'classic-shakes', name: 'Classic Shakes', icon: '🥤', description: 'Rose Gulkand, Dark Fantasy, Mava Malai & classic favorites' }
+  { id: 'all-desserts', name: 'All Treats', icon: '', description: 'Explore our complete dessert & thick shake collection' },
+  { id: 'signature-premium', name: 'Signature Premium', icon: '', description: 'Pistachio Kunafa, Lotus Biscoff, Tiramisu & exclusive luxury shakes' },
+  { id: 'nutella-ferrero', name: 'Nutella & Ferrero', icon: '', description: 'Original Nutella & Rich Ferrero Rocher thick shake masterpieces' },
+  { id: 'brownie-shakes', name: 'Brownie Shakes', icon: '', description: 'Freshly baked fudge brownies blended into rich thick shakes' },
+  { id: 'mithai-fusion', name: 'Mithai Fusion', icon: '', description: 'Traditional Indian sweets meet modern gourmet indulgence' },
+  { id: 'fruit-shakes', name: 'Fresh Fruit', icon: '', description: 'Alphonso Mango, Strawberry Blast, Sitafal & berry thick shakes' },
+  { id: 'chocolate-shakes', name: 'Chocolate Shakes', icon: '', description: 'Cadbury Silk, Belgian Chocolate, Snickers & dark chocolate delight' },
+  { id: 'classic-shakes', name: 'Classic Shakes', icon: '', description: 'Rose Gulkand, Dark Fantasy, Mava Malai & classic favorites' }
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
