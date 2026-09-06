@@ -32,8 +32,8 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 px-4 bg-[#3E0303] overflow-hidden" ref={ref}>
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-24 px-4 bg-[#3E0303] overflow-hidden w-full max-w-full" ref={ref}>
+      <div className="max-w-7xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           
           {/* Visual Column: Official Brand Crest & Menu Showcase */}
@@ -45,7 +45,7 @@ export default function About() {
           >
             <div className="relative max-w-md mx-auto lg:max-w-none group">
               {/* Decorative Gold Frame */}
-              <div className="absolute inset-0 border-2 border-[var(--gold)]/60 rounded-3xl translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
+              <div className="hidden sm:block absolute inset-0 border-2 border-[var(--gold)]/60 rounded-3xl sm:translate-x-4 sm:translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500 pointer-events-none" />
               
               {/* Main Card Container */}
               <div className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#2A0202] to-[#4A0404] p-4 flex flex-col items-center justify-center border border-[var(--gold)]/30">

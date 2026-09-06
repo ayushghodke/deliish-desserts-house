@@ -36,11 +36,11 @@ export default function Navbar() {
     <>
       <header
         className={clsx(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          'fixed top-0 left-0 right-0 w-full max-w-full z-50 transition-all duration-300',
           isScrolled ? 'backdrop-blur-xl bg-[#4A0404]/90 py-2.5 shadow-2xl border-b border-[#D4A843]/20' : 'bg-transparent py-4'
         )}
       >
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-[var(--gold)] shadow-[0_0_12px_rgba(212,168,67,0.4)] group-hover:scale-105 transition-transform shrink-0">

@@ -22,13 +22,13 @@ const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1C0101] text-[var(--cream)] pt-20 pb-8 relative overflow-hidden border-t border-[var(--gold)]/20">
+    <footer className="bg-[#1C0101] text-[var(--cream)] pt-20 pb-8 relative overflow-hidden border-t border-[var(--gold)]/20 w-full max-w-full">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.8 }}
-        className="container mx-auto px-4 md:px-6"
+        className="w-full max-w-7xl mx-auto px-4 md:px-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Column 1: Brand & Logo (5 cols) */}

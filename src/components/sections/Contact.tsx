@@ -15,8 +15,8 @@ const InstagramIcon = ({ size = 20 }: { size?: number }) => (
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-4 bg-[#320202] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-24 px-4 bg-[#320202] relative overflow-hidden w-full max-w-full">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-[var(--gold)] text-xs uppercase tracking-[0.25em] font-bold block mb-3">
@@ -131,12 +131,12 @@ export default function Contact() {
             </div>
 
             {/* Quick Action Buttons */}
-            <div className="pt-8 mt-8 border-t border-[var(--gold)]/20 flex flex-wrap gap-4">
+            <div className="pt-8 mt-8 border-t border-[var(--gold)]/20 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href={`https://wa.me/${CAFE_INFO.phone.replace(/\D/g, '')}?text=Hi%20Prratik,%20I%20would%20like%20to%20reserve%20a%20table%20at%20Deliish%20Desserts%20House`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[200px] flex items-center justify-center gap-2.5 bg-[#25D366] text-white font-bold rounded-full py-3.5 px-6 hover:bg-[#1faa53] transition-colors shadow-lg"
+                className="w-full sm:flex-1 flex items-center justify-center gap-2.5 bg-[#25D366] text-white font-bold rounded-full py-3.5 px-6 hover:bg-[#1faa53] transition-colors shadow-lg text-center"
               >
                 <MessageCircle size={18} />
                 <span>Chat on WhatsApp</span>
@@ -146,7 +146,7 @@ export default function Contact() {
                 href={CAFE_INFO.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[200px] flex items-center justify-center gap-2.5 border-2 border-[var(--gold)] text-[var(--gold)] font-bold rounded-full py-3.5 px-6 hover:bg-[var(--gold)] hover:text-[var(--maroon)] transition-all duration-300"
+                className="w-full sm:flex-1 flex items-center justify-center gap-2.5 border-2 border-[var(--gold)] text-[var(--gold)] font-bold rounded-full py-3.5 px-6 hover:bg-[var(--gold)] hover:text-[var(--maroon)] transition-all duration-300 text-center"
               >
                 <MapPin size={18} />
                 <span>Get Directions</span>

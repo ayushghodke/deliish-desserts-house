@@ -56,14 +56,14 @@ export default function Loyalty() {
   ];
 
   return (
-    <section id="loyalty" className="py-24 px-4 bg-gradient-to-b from-[var(--deep-red)] to-[var(--maroon)] relative overflow-hidden">
+    <section id="loyalty" className="py-24 px-4 bg-gradient-to-b from-[var(--deep-red)] to-[var(--maroon)] relative overflow-hidden w-full max-w-full">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[var(--gold)] blur-[120px]"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[var(--gold)] blur-[120px]"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}

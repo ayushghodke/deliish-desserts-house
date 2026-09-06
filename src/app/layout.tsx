@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -19,16 +19,23 @@ export const metadata: Metadata = {
   description: "Experience unique recipes and premium desserts at Deliish Desserts House. Where every bite tells a story.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen bg-maroon text-cream antialiased font-body flex flex-col">
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable} overflow-x-hidden max-w-full`}>
+      <body className="min-h-screen w-full max-w-full overflow-x-hidden bg-maroon text-cream antialiased font-body flex flex-col relative">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow w-full max-w-full overflow-x-hidden">
           {children}
         </main>
         <Footer />

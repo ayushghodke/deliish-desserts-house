@@ -77,8 +77,8 @@ export default function Gallery() {
   const [activeImage, setActiveImage] = useState<GalleryItem | null>(null);
 
   return (
-    <section id="gallery" className="py-24 px-4 bg-[#380303] relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="gallery" className="py-24 px-4 bg-[#380303] relative w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Section Title */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/30 bg-[#4A0404]/50 mb-3">

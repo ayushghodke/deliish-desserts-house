@@ -16,8 +16,8 @@ export default function Menu() {
     : MENU_ITEMS.filter((item: MenuItem) => item.category === activeCategory);
 
   return (
-    <section id="menu" className="py-24 px-4 bg-[#2F0202]">
-      <div className="max-w-7xl mx-auto">
+    <section id="menu" className="py-24 px-4 bg-[#2F0202] w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-[var(--gold)]/30 bg-[#4A0404]/50 mb-3">
@@ -46,7 +46,7 @@ export default function Menu() {
         </div>
 
         {/* Category Filter Bar */}
-        <div className="flex overflow-x-auto pb-4 mb-10 justify-start lg:justify-center gap-2.5 no-scrollbar">
+        <div className="flex overflow-x-auto pb-4 mb-10 justify-start lg:justify-center gap-2.5 no-scrollbar w-full max-w-full">
           {MENU_CATEGORIES.map((category: MenuCategory) => {
             const isActive = activeCategory === category.id;
             return (

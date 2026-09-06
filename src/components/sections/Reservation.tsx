@@ -14,11 +14,11 @@ export default function Reservation() {
   };
 
   return (
-    <section id="reserve" className="py-24 px-4 bg-deep-red relative">
+    <section id="reserve" className="py-24 px-4 bg-deep-red relative w-full max-w-full overflow-hidden">
       {/* Decorative gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-maroon/50 pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="text-center mb-16">
           <span className="text-gold text-sm uppercase tracking-widest font-semibold block mb-4">
             Reserve a Table
@@ -36,7 +36,7 @@ export default function Reservation() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm border border-gold/10 rounded-2xl p-8">
+            <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm border border-gold/10 rounded-2xl p-5 sm:p-8">
               <div className="space-y-6">
                 <div>
                   <input

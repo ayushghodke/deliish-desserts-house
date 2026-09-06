@@ -25,9 +25,9 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-24 px-4 bg-gradient-to-b from-[#4A0404] via-[#350202] to-[#240101]"
+      className="py-24 px-4 bg-gradient-to-b from-[#4A0404] via-[#350202] to-[#240101] w-full max-w-full overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
